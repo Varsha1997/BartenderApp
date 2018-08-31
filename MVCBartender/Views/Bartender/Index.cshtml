@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MVCBartender.Models.BartenderModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Of Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDrinkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDrinkPrice)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDrinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDrinkPrice)
+        </td>
+    </tr>
+}
+
+</table>

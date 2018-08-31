@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVCBartender.Models.MenuModel>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+
+<p>
+    @Html.ActionLink("Order Now", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDrink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDrinkPrice)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDrink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDrinkPrice)
+        </td>
+    </tr>
+}
+
+</table>
